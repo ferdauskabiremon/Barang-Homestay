@@ -211,19 +211,19 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mt-14">
+        <div className="grid md:grid-cols-3 gap-6 mt-14 items-stretch">
           {dayTrips.map((d) => (
-            <div key={d.id} className="hover-lift rounded-2xl overflow-hidden bg-white" style={{ boxShadow: "0 1px 3px rgba(21,19,14,.08)" }}>
-              <div className="h-52 bg-cover bg-center relative" style={{ backgroundImage: `url(${d.img})` }}>
+            <div key={d.id} className="hover-lift rounded-2xl overflow-hidden bg-white flex flex-col" style={{ boxShadow: "0 1px 3px rgba(21,19,14,.08)" }}>
+              <div className="h-52 bg-cover bg-center relative shrink-0" style={{ backgroundImage: `url(${d.img})` }}>
                 <span className="absolute top-3 left-3 text-xs font-medium px-3 py-1.5 rounded-full bg-white/95 text-black">${d.price} / person</span>
               </div>
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-1">
                 <h3 className="font-display text-xl">{d.title}</h3>
                 <p className="text-xs mt-3" style={{ color: "var(--grey)" }}>{d.text}</p>
                 <a
                   href={waLink(`Namaste! I'd like to book the "${d.title}" day trip (approx $${d.price}/person).`)}
                   target="_blank" rel="noreferrer"
-                  className={btnDark + " mt-5 w-full justify-center"}
+                  className={btnDark + " mt-5 w-full justify-center mt-auto"}
                 >
                   Book Now
                 </a>
@@ -343,8 +343,8 @@ export default function Home() {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mt-12">
           {partners.map((p) => (
             <a key={p.name} href={p.url} target="_blank" rel="noreferrer" className="hover-lift rounded-2xl p-6 bg-white flex flex-col items-center text-center gap-3" style={{ boxShadow: "0 1px 3px rgba(21,19,14,.08)" }}>
-              <div className="w-16 h-16 rounded-full flex items-center justify-center overflow-hidden" style={{ background: "var(--bg)" }}>
-                <img src={p.logo} alt={p.name} className="max-w-[70%] max-h-[70%] object-contain" />
+              <div className="w-24 h-24 rounded-full flex items-center justify-center overflow-hidden" style={{ background: "var(--bg)" }}>
+                <img src={p.logo} alt={p.name} className="max-w-[85%] max-h-[85%] object-contain" />
               </div>
               <div>
                 <p className="text-sm font-medium">{p.name}</p>
@@ -406,7 +406,7 @@ export default function Home() {
           </div>
 
           <div className="hover-lift rounded-2xl h-full min-h-[360px] bg-cover bg-center relative flex items-end p-8"
-            style={{ backgroundImage: "url(https://images.unsplash.com/photo-1553913861-c0fddf2619ee?w=900&q=80)" }}>
+            style={{ backgroundImage: "url(/gallery/faq-village-group.jpg)" }}>
             <div className="absolute inset-0 rounded-2xl" style={{ background: "linear-gradient(180deg, transparent 30%, rgba(11,10,8,.75) 100%)" }} />
             <div className="relative text-white">
               <h3 className="font-display text-2xl">Still Have Questions?</h3>
