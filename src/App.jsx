@@ -73,21 +73,21 @@ const dayTrips = [
     title: "Swimming and Jungle Walk",
     text: "A cool river swim on the Harpan Khola followed by a guided walk into the forest above the village.",
     price: 20,
-    img: "https://images.unsplash.com/photo-1600591109098-6cc84a824686?w=900&q=80",
+    img: "/gallery/experience-swimming.jpg",
   },
   {
     id: "meditation-healing",
     title: "Meditation and Sound Healing",
     text: "Morning meditation at the village Ashram, followed by a traditional sound healing bowl session.",
     price: 30,
-    img: "https://images.unsplash.com/photo-1544376798-89c748eab54f?w=900&q=80",
+    img: "/gallery/experience-meditation.jpg",
   },
   {
     id: "cultural-cooking",
     title: "Guided Cultural Tour & Cooking Class",
     text: "A village walking tour, river walk, traditional costume photos, organic farming, and a Dal Bhat cooking class.",
     price: 35,
-    img: "https://baranghomestay.com/wp-content/uploads/2023/03/image_2023-03-26_213942182.png",
+    img: "/gallery/experience-cultural-tour.jpg",
   },
 ];
 
@@ -268,13 +268,13 @@ export default function App() {
         </h2>
 
         <div className="flex gap-3 mt-14 h-64 md:h-96">
-          <div className="w-1/4 rounded-2xl bg-cover bg-center hidden md:block" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1571939228382-b2f2b585ce15?w=600&q=80)" }} />
-          <div className="flex-1 rounded-2xl bg-cover bg-center relative" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?w=1200&q=80)" }}>
+          <div className="w-1/4 rounded-2xl bg-cover bg-center hidden md:block" style={{ backgroundImage: "url(/gallery/about-left-farming.jpg)" }} />
+          <div className="flex-1 rounded-2xl bg-cover bg-center relative" style={{ backgroundImage: "url(/gallery/about-middle-terraces.jpg)" }}>
             <div className="absolute inset-0 flex items-center justify-center">
               <a href="#homestays" onClick={(e) => handleNavClick(e, "#homestays")} className={btnPrimary}>Read More</a>
             </div>
           </div>
-          <div className="w-1/4 rounded-2xl bg-cover bg-center hidden md:block" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1571847140471-1d7766e825ea?w=600&q=80)" }} />
+          <div className="w-1/4 rounded-2xl bg-cover bg-center hidden md:block" style={{ backgroundImage: "url(/gallery/about-right-fishtail.jpg)" }} />
         </div>
 
         <div className="grid md:grid-cols-2 gap-10 mt-10 text-sm" style={{ color: "var(--grey)" }}>
@@ -382,7 +382,7 @@ export default function App() {
               </a>
             </div>
           </div>
-          <div className="hover-lift rounded-2xl h-80 bg-cover bg-center relative flex items-end p-8" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1625398407796-82650a8c9dd4?w=1200&q=80)" }}>
+          <div className="hover-lift rounded-2xl h-80 bg-cover bg-center relative flex items-end p-8" style={{ backgroundImage: "url(/gallery/cooking-fullday-momo.jpg)" }}>
             <div className="absolute inset-0 rounded-2xl" style={{ background: "linear-gradient(180deg, transparent 40%, rgba(11,10,8,.75) 100%)" }} />
             <span className="absolute top-5 left-5 text-xs font-medium px-3 py-1.5 rounded-full bg-white text-black">${40} / person</span>
             <div className="relative text-white">
