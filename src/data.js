@@ -152,43 +152,51 @@ export const TREKS_ALL_URL = "https://himalayanjourney.com/treks/";
    typographic placeholder tiles until real logo files are provided
    directly (see chat note). */
 export const partners = [
-  { name: "Machon Letvuna", country: "Israel", url: "https://letvuna.co.il/" },
-  { name: "Apetyt na Świat", country: "Poland", url: "https://www.apetytnaswiat.pl/" },
-  { name: "Terramotion", country: "Indonesia", url: "https://www.terramotion.id/" },
-  { name: "Movepa", country: "Thailand", url: "https://www.facebook.com/MOVEPA.official" },
-  { name: "Tugende", country: "Poland", url: "https://tugende.pl/" },
-  { name: "Viewfinder Travel", country: "Thailand", url: "https://www.facebook.com/ViewfinderTravel" },
-  { name: "Little Monsters Travel", country: "Singapore", url: "https://littlemonsterstravel.net/" },
-  { name: "India Visit", country: "India", url: "http://www.indiavisit.co.in/" },
-  { name: "Katanya Pendaki Trip", country: "Indonesia", url: "https://www.instagram.com/katanyapendaki.trip/" },
+  { name: "Machon Letvuna", country: "Israel", url: "https://letvuna.co.il/", logo: "/partners/MachonLetvuna.png" },
+  { name: "Apetyt na Świat", country: "Poland", url: "https://www.apetytnaswiat.pl/", logo: "/partners/ApetytNaSwiat.jpg" },
+  { name: "Terramotion", country: "Indonesia", url: "https://www.terramotion.id/", logo: "/partners/Terramotion.jpg" },
+  { name: "Movepa", country: "Thailand", url: "https://www.facebook.com/MOVEPA.official", logo: "/partners/Movepa.png" },
+  { name: "Tugende", country: "Poland", url: "https://tugende.pl/", logo: "/partners/Tugende.jpg" },
+  { name: "Viewfinder Travel", country: "Thailand", url: "https://www.facebook.com/ViewfinderTravel", logo: "/partners/ViewfinderTravel.jpg" },
+  { name: "Little Monsters Travel", country: "Singapore", url: "https://littlemonsterstravel.net/", logo: "/partners/LittleMonstersTravel.png" },
+  { name: "India Visit", country: "India", url: "http://www.indiavisit.co.in/", logo: "/partners/IndiaVisit.png" },
+  { name: "Katanya Pendaki Trip", country: "Indonesia", url: "https://www.instagram.com/katanyapendaki.trip/", logo: "/partners/KatanyaPendakiTrip.jpg" },
 ];
 
 /* Festivals — condensed/paraphrased from the user-provided
    "Nepali Festivals" document. */
+const IMG_LAMP = "https://images.pexels.com/photos/29422077/pexels-photo-29422077/free-photo-of-traditional-festival-diya-lamp-in-hand.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
+const IMG_PARADE = "https://images.pexels.com/photos/30104060/pexels-photo-30104060/free-photo-of-traditional-musicians-performing-with-flutes.jpeg?cs=tinysrgb&dpr=1&w=500";
+const IMG_COLORS = "https://images.pexels.com/photos/32135288/pexels-photo-32135288/free-photo-of-vibrant-sindoor-jatra-festival-in-nepal.jpeg?cs=tinysrgb&dpr=1&w=500";
+const IMG_STUPA = "https://images.pexels.com/photos/2320243/pexels-photo-2320243.jpeg?auto=compress&w=1260&h=750&dpr=1";
+const IMG_DANCE = "https://images.pexels.com/photos/2415435/pexels-photo-2415435.jpeg?auto=compress&w=1260&h=750&dpr=1";
+const IMG_TERRACES = "/gallery/about-middle-terraces.jpg";
+const IMG_MONK = "https://images.pexels.com/photos/28589297/pexels-photo-28589297/free-photo-of-buddhist-monks-in-traditional-attire-at-prayer.jpeg?cs=tinysrgb&dpr=1&w=500";
+
 export const festivals = [
-  { name: "Dashain", season: "Sept–Oct", text: "Nepal's longest, biggest festival — honoring Goddess Durga with family reunions and the tenth-day tika and jamara blessing." },
-  { name: "Tihar", season: "Oct–Nov", text: "The Festival of Lights — five days honoring crows, dogs, cows, Goddess Laxmi, and the bond between brothers and sisters." },
-  { name: "Teej", season: "Aug–Sept", text: "A vibrant women's festival of fasting, song, and dance for Parvati and Shiva, and a chance to reunite with family." },
-  { name: "Maha Shivaratri", season: "Feb–Mar", text: "The 'Great Night of Shiva' — fasting, meditation, and night-long worship, centered on Pashupatinath Temple." },
-  { name: "Holi Purnima", season: "Feb–Mar", text: "The Festival of Colors — powder, water, and citywide celebration welcoming the arrival of spring." },
-  { name: "Ram Navami", season: "Mar–Apr", text: "Marks the birth of Lord Rama with temple prayers, fasting, and readings from the Ramayana." },
-  { name: "Chhath Parva", season: "Oct–Nov", text: "Riverside worship of the sun god, with offerings at sunset and sunrise over several devoted days." },
-  { name: "Buddha Jayanti", season: "Apr–May", text: "Celebrates the birth, enlightenment, and passing of Buddha, centered at Lumbini and Kathmandu's great stupas." },
-  { name: "Ubhauli Festival", season: "Apr–May", text: "A Kirat/Rai seasonal festival marking the start of farming season with the circular Sakela dance." },
-  { name: "Udhauli Festival", season: "Nov–Dec", text: "The harvest-season counterpart to Ubhauli — gratitude to nature and ancestors through the Sakela dance." },
-  { name: "Yomari Punhi", season: "Nov–Dec", text: "A Newar harvest festival celebrated with steamed Yomari dumplings and prayers to Annapurna." },
-  { name: "Tamu Lhosar", season: "Dec–Jan", text: "The Gurung New Year — traditional music, Ghatu and Sorathi dance, and family reunions." },
-  { name: "Gyalpo Lhosar", season: "Feb–Mar", text: "The Sherpa New Year — spiritual renewal and spectacular masked Chham dances at monasteries." },
-  { name: "Sonam Lhosar", season: "Jan–Feb", text: "The Tamang New Year — damphu drums, Tamang Selo music, and festive family gatherings." },
-  { name: "Indra Jatra", season: "Aug–Sept", text: "A Kathmandu Valley festival honoring the rain god, famous for the Living Goddess Kumari's chariot procession." },
-  { name: "Bisket Jatra", season: "April", text: "Bhaktapur's dramatic New Year festival, known for towering wooden chariots pulled through the streets." },
-  { name: "Ropain Jatra", season: "June–July", text: "A joyful rice-planting festival — mud, music, and dancing together in the flooded paddy fields." },
-  { name: "Ghode Jatra", season: "Mar–Apr", text: "Kathmandu's Festival of Horses, featuring equestrian displays and military demonstrations at Tundikhel." },
-  { name: "Tongue Piercing Festival", season: "April", text: "A rare, deeply devotional ritual in Bode, Bhaktapur, honoring the local deity Barahi." },
-  { name: "Maghe Sankranti", season: "January", text: "Marks the turn toward warmer days with sacred river bathing and seasonal foods like til ko laddu." },
-  { name: "Janai Purnima", season: "August", text: "A sacred-thread renewal and protection ritual, with pilgrimages to lakes like Gosainkunda." },
-  { name: "Gai Jatra", season: "Aug–Sept", text: "The Festival of Cows — remembering loved ones lost during the year through procession, humor, and satire." },
-  { name: "Krishna Janmashtami", season: "Aug–Sept", text: "Celebrates Lord Krishna's birth with midnight prayers, fasting, and devotional song." },
+  { name: "Dashain", season: "Sept–Oct", text: "Nepal's longest, biggest festival — honoring Goddess Durga with family reunions and the tenth-day tika and jamara blessing.", img: IMG_LAMP },
+  { name: "Tihar", season: "Oct–Nov", text: "The Festival of Lights — five days honoring crows, dogs, cows, Goddess Laxmi, and the bond between brothers and sisters.", img: IMG_LAMP },
+  { name: "Teej", season: "Aug–Sept", text: "A vibrant women's festival of fasting, song, and dance for Parvati and Shiva, and a chance to reunite with family.", img: IMG_DANCE },
+  { name: "Maha Shivaratri", season: "Feb–Mar", text: "The 'Great Night of Shiva' — fasting, meditation, and night-long worship, centered on Pashupatinath Temple.", img: IMG_MONK },
+  { name: "Holi Purnima", season: "Feb–Mar", text: "The Festival of Colors — powder, water, and citywide celebration welcoming the arrival of spring.", img: IMG_COLORS },
+  { name: "Ram Navami", season: "Mar–Apr", text: "Marks the birth of Lord Rama with temple prayers, fasting, and readings from the Ramayana.", img: IMG_MONK },
+  { name: "Chhath Parva", season: "Oct–Nov", text: "Riverside worship of the sun god, with offerings at sunset and sunrise over several devoted days.", img: IMG_MONK },
+  { name: "Buddha Jayanti", season: "Apr–May", text: "Celebrates the birth, enlightenment, and passing of Buddha, centered at Lumbini and Kathmandu's great stupas.", img: IMG_STUPA },
+  { name: "Ubhauli Festival", season: "Apr–May", text: "A Kirat/Rai seasonal festival marking the start of farming season with the circular Sakela dance.", img: IMG_TERRACES },
+  { name: "Udhauli Festival", season: "Nov–Dec", text: "The harvest-season counterpart to Ubhauli — gratitude to nature and ancestors through the Sakela dance.", img: IMG_TERRACES },
+  { name: "Yomari Punhi", season: "Nov–Dec", text: "A Newar harvest festival celebrated with steamed Yomari dumplings and prayers to Annapurna.", img: IMG_LAMP },
+  { name: "Tamu Lhosar", season: "Dec–Jan", text: "The Gurung New Year — traditional music, Ghatu and Sorathi dance, and family reunions.", img: IMG_DANCE },
+  { name: "Gyalpo Lhosar", season: "Feb–Mar", text: "The Sherpa New Year — spiritual renewal and spectacular masked Chham dances at monasteries.", img: IMG_STUPA },
+  { name: "Sonam Lhosar", season: "Jan–Feb", text: "The Tamang New Year — damphu drums, Tamang Selo music, and festive family gatherings.", img: IMG_DANCE },
+  { name: "Indra Jatra", season: "Aug–Sept", text: "A Kathmandu Valley festival honoring the rain god, famous for the Living Goddess Kumari's chariot procession.", img: IMG_PARADE },
+  { name: "Bisket Jatra", season: "April", text: "Bhaktapur's dramatic New Year festival, known for towering wooden chariots pulled through the streets.", img: IMG_PARADE },
+  { name: "Ropain Jatra", season: "June–July", text: "A joyful rice-planting festival — mud, music, and dancing together in the flooded paddy fields.", img: IMG_TERRACES },
+  { name: "Ghode Jatra", season: "Mar–Apr", text: "Kathmandu's Festival of Horses, featuring equestrian displays and military demonstrations at Tundikhel.", img: IMG_PARADE },
+  { name: "Tongue Piercing Festival", season: "April", text: "A rare, deeply devotional ritual in Bode, Bhaktapur, honoring the local deity Barahi.", img: IMG_PARADE },
+  { name: "Maghe Sankranti", season: "January", text: "Marks the turn toward warmer days with sacred river bathing and seasonal foods like til ko laddu.", img: IMG_LAMP },
+  { name: "Janai Purnima", season: "August", text: "A sacred-thread renewal and protection ritual, with pilgrimages to lakes like Gosainkunda.", img: IMG_STUPA },
+  { name: "Gai Jatra", season: "Aug–Sept", text: "The Festival of Cows — remembering loved ones lost during the year through procession, humor, and satire.", img: IMG_PARADE },
+  { name: "Krishna Janmashtami", season: "Aug–Sept", text: "Celebrates Lord Krishna's birth with midnight prayers, fasting, and devotional song.", img: IMG_MONK },
 ];
 
 export const impact = [

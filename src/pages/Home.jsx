@@ -295,31 +295,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= REVIEWS ================= */}
-      <section id="stories" className="scroll-target max-w-7xl mx-auto px-6 md:px-10 pt-24 md:pt-32">
-        <p className="eyebrow">From our guests</p>
-        <h2 className="font-display text-3xl md:text-5xl mt-4 leading-tight">
-          Reviews <span style={{ color: "var(--grey)" }}>from Airbnb</span>
-        </h2>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
-          {reviews.map((r) => (
-            <div key={r.name} className="hover-lift rounded-2xl p-6 bg-white" style={{ boxShadow: "0 1px 3px rgba(21,19,14,.08)" }}>
-              <div className="flex items-center justify-between">
-                <img src="/awards/airbnb-logo.png" alt="Airbnb" className="w-6 h-6" />
-                <div className="flex gap-0.5">
-                  {Array.from({ length: r.rating }).map((_, i) => (
-                    <Star key={i} size={13} fill="var(--ink)" style={{ color: "var(--ink)" }} />
-                  ))}
-                </div>
-              </div>
-              <p className="text-sm mt-4" style={{ color: "var(--ink)" }}>{r.text}</p>
-              <p className="text-xs mt-4 font-medium" style={{ color: "var(--grey)" }}>{r.name} · {r.country}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* ================= FESTIVALS ================= */}
       <section id="festivals" className="scroll-target max-w-7xl mx-auto px-6 md:px-10 pt-24 md:pt-32">
         <div className="flex items-end justify-between flex-wrap gap-6 mb-2">
@@ -344,13 +319,19 @@ export default function Home() {
 
         <div ref={festivalStripRef} className="flex gap-5 overflow-x-auto scrollbar-none pb-4 mt-10">
           {festivals.map((f) => (
-            <div key={f.name} className="min-w-[280px] max-w-[280px] bg-white rounded-2xl p-6 shrink-0 hover-lift" style={{ boxShadow: "0 1px 3px rgba(21,19,14,.08)" }}>
-              <p className="text-xs font-medium" style={{ color: "var(--grey)" }}>{f.season}</p>
-              <h3 className="font-display text-lg mt-2">{f.name}</h3>
-              <p className="text-xs mt-3" style={{ color: "var(--grey)" }}>{f.text}</p>
+            <div key={f.name} className="min-w-[280px] max-w-[280px] bg-white rounded-2xl overflow-hidden shrink-0 hover-lift" style={{ boxShadow: "0 1px 3px rgba(21,19,14,.08)" }}>
+              <div className="h-36 bg-cover bg-center" style={{ backgroundImage: `url(${f.img})`, backgroundColor: "#ddd" }} />
+              <div className="p-6">
+                <p className="text-xs font-medium" style={{ color: "var(--grey)" }}>{f.season}</p>
+                <h3 className="font-display text-lg mt-2">{f.name}</h3>
+                <p className="text-xs mt-3" style={{ color: "var(--grey)" }}>{f.text}</p>
+              </div>
             </div>
           ))}
         </div>
+        <p className="text-xs mt-4" style={{ color: "var(--grey)" }}>
+          Photos are representative stock imagery, not all specific to each festival — swap in real event photos where you have them.
+        </p>
       </section>
 
       {/* ================= PARTNERS ================= */}
@@ -362,8 +343,8 @@ export default function Home() {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mt-12">
           {partners.map((p) => (
             <a key={p.name} href={p.url} target="_blank" rel="noreferrer" className="hover-lift rounded-2xl p-6 bg-white flex flex-col items-center text-center gap-3" style={{ boxShadow: "0 1px 3px rgba(21,19,14,.08)" }}>
-              <div className="w-12 h-12 rounded-full flex items-center justify-center font-display text-lg" style={{ background: "var(--bg)", color: "var(--ink)" }}>
-                {p.name.charAt(0)}
+              <div className="w-16 h-16 rounded-full flex items-center justify-center overflow-hidden" style={{ background: "var(--bg)" }}>
+                <img src={p.logo} alt={p.name} className="max-w-[70%] max-h-[70%] object-contain" />
               </div>
               <div>
                 <p className="text-sm font-medium">{p.name}</p>
@@ -372,9 +353,31 @@ export default function Home() {
             </a>
           ))}
         </div>
-        <p className="text-xs mt-6" style={{ color: "var(--grey)" }}>
-          Partner logos are placeholders pending final logo files — see chat for details.
-        </p>
+      </section>
+
+      {/* ================= REVIEWS ================= */}
+      <section id="stories" className="scroll-target max-w-7xl mx-auto px-6 md:px-10 pt-24 md:pt-32">
+        <p className="eyebrow">From our guests</p>
+        <h2 className="font-display text-3xl md:text-5xl mt-4 leading-tight">
+          Reviews <span style={{ color: "var(--grey)" }}>from Airbnb</span>
+        </h2>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
+          {reviews.map((r) => (
+            <div key={r.name} className="hover-lift rounded-2xl p-6 bg-white" style={{ boxShadow: "0 1px 3px rgba(21,19,14,.08)" }}>
+              <div className="flex items-center justify-between">
+                <img src="/awards/airbnb-logo.png" alt="Airbnb" className="w-6 h-6" />
+                <div className="flex gap-0.5">
+                  {Array.from({ length: r.rating }).map((_, i) => (
+                    <Star key={i} size={13} fill="var(--ink)" style={{ color: "var(--ink)" }} />
+                  ))}
+                </div>
+              </div>
+              <p className="text-sm mt-4" style={{ color: "var(--ink)" }}>{r.text}</p>
+              <p className="text-xs mt-4 font-medium" style={{ color: "var(--grey)" }}>{r.name} · {r.country}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* ================= FAQ ================= */}
