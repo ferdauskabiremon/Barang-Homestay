@@ -73,21 +73,21 @@ const dayTrips = [
     title: "Swimming and Jungle Walk",
     text: "A cool river swim on the Harpan Khola followed by a guided walk into the forest above the village.",
     price: 20,
-    img: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=80",
+    img: "https://images.unsplash.com/photo-1600591109098-6cc84a824686?w=900&q=80",
   },
   {
     id: "meditation-healing",
     title: "Meditation and Sound Healing",
     text: "Morning meditation at the village Ashram, followed by a traditional sound healing bowl session.",
     price: 30,
-    img: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&q=80",
+    img: "https://images.unsplash.com/photo-1544376798-89c748eab54f?w=900&q=80",
   },
   {
     id: "cultural-cooking",
     title: "Guided Cultural Tour & Cooking Class",
     text: "A village walking tour, river walk, traditional costume photos, organic farming, and a Dal Bhat cooking class.",
     price: 35,
-    img: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=900&q=80",
+    img: "https://baranghomestay.com/wp-content/uploads/2023/03/image_2023-03-26_213942182.png",
   },
 ];
 
@@ -105,6 +105,15 @@ const faqs = [
   { q: "Can I book Experiences or Cooking Classes without staying overnight?", a: "Yes — day trips and cooking classes can be booked on their own, as inquiries over WhatsApp." },
 ];
 
+const reviews = [
+  { name: "Grace", country: "Taiwan", rating: 5, text: "Fresh mountain air, a warm welcome, and a sound-healing session I still think about." },
+  { name: "Sethu", country: "India", rating: 5, text: "Felt like being folded straight into the family from the moment I arrived." },
+  { name: "Amanda", country: "USA", rating: 5, text: "Woke up to mountain views every morning and learned to cook with the family." },
+  { name: "David", country: "USA", rating: 5, text: "An authentic homestay not far from Pokhara — clean rooms, warm hosts, worth it." },
+  { name: "Millie", country: "UK", rating: 5, text: "The most giving people I've met — the highlight of my whole Nepal trip." },
+  { name: "Cody", country: "USA", rating: 5, text: "Ama's cooking and a village that lives in real harmony with the hills around it." },
+];
+
 const navLinks = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About us" },
@@ -112,26 +121,6 @@ const navLinks = [
   { href: "#experiences", label: "Experiences" },
   { href: "#cooking", label: "Cooking Classes" },
 ];
-
-/* Simple text-styled brand badges — standing in for licensed logo
-   assets. Swap for the real Airbnb/Booking.com logo files (with
-   permission to use them) before launch. */
-function AirbnbBadge({ dark }) {
-  return (
-    <span className="inline-flex items-center gap-1.5 text-xs font-semibold" style={{ color: dark ? "#FF385C" : "#ffffff" }}>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C9 7 5 12.5 5 16a7 7 0 0014 0c0-3.5-4-9-7-14z" /></svg>
-      airbnb
-    </span>
-  );
-}
-function BookingBadge({ dark }) {
-  return (
-    <span className="inline-flex items-center gap-1.5 text-xs font-semibold" style={{ color: dark ? "#003580" : "#ffffff" }}>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="4" /></svg>
-      Booking.com
-    </span>
-  );
-}
 
 const btnPrimary =
   "inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-medium bg-white text-black transition-all duration-200 hover:bg-[var(--ink)] hover:text-white hover:-translate-y-0.5 hover:shadow-md";
@@ -165,17 +154,17 @@ export default function App() {
   return (
     <div style={{ fontFamily: "var(--font-body)", color: "var(--ink)", background: "var(--bg)" }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');
         :root{
           --bg:#F3F1EA; --card:#FFFFFF; --ink:#15130E; --grey:#9B988A; --grey-light:#D8D5C9;
           --black:#0B0A08;
-          --font-display:'Instrument Serif', serif; --font-body:'Plus Jakarta Sans', sans-serif;
+          --font-display:'Plus Jakarta Sans', sans-serif; --font-body:'Plus Jakarta Sans', sans-serif;
         }
         html{ scroll-behavior: smooth; }
         section, .scroll-target{ scroll-margin-top: 110px; }
         body{ font-family: var(--font-body); }
-        .font-display{ font-family: var(--font-display); font-style: normal; }
-        .eyebrow{ font-family: var(--font-display); font-style: italic; font-size: 15px; color: var(--ink); }
+        .font-display{ font-family: var(--font-display); font-style: normal; font-weight: 600; letter-spacing: -0.01em; }
+        .eyebrow{ font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: 14px; color: var(--ink); }
         .scrollbar-none::-webkit-scrollbar{ display:none; }
         .scrollbar-none{ -ms-overflow-style:none; scrollbar-width:none; }
         .hover-arrow:hover .arrow-shift{ transform: translate(3px,-3px); background:#fff; }
@@ -197,14 +186,8 @@ export default function App() {
           boxShadow: scrolled ? "0 1px 0 rgba(21,19,14,.08)" : "none",
         }}
       >
-        {/* trust badge row — top of header, left-aligned */}
-        <div className="px-6 md:px-10 pt-3 flex items-center gap-4">
-          <AirbnbBadge dark={scrolled} />
-          <BookingBadge dark={scrolled} />
-        </div>
-
         {/* main nav row */}
-        <div className="flex items-center justify-between px-6 md:px-10 pt-2 pb-4">
+        <div className="flex items-center justify-between px-6 md:px-10 pt-4 pb-4">
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, "#home")}
@@ -388,7 +371,7 @@ export default function App() {
           Cooking Classes, <span style={{ color: "var(--grey)" }}>Half-Day or Full-Day</span>
         </h2>
         <div className="grid md:grid-cols-2 gap-6 mt-14">
-          <div className="hover-lift rounded-2xl h-80 bg-cover bg-center relative flex items-end p-8" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=1200&q=80)" }}>
+          <div className="hover-lift rounded-2xl h-80 bg-cover bg-center relative flex items-end p-8" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=1200&q=80)" }}>
             <div className="absolute inset-0 rounded-2xl" style={{ background: "linear-gradient(180deg, transparent 40%, rgba(11,10,8,.75) 100%)" }} />
             <span className="absolute top-5 left-5 text-xs font-medium px-3 py-1.5 rounded-full bg-white text-black">${25} / person</span>
             <div className="relative text-white">
@@ -399,7 +382,7 @@ export default function App() {
               </a>
             </div>
           </div>
-          <div className="hover-lift rounded-2xl h-80 bg-cover bg-center relative flex items-end p-8" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1626804475297-411da4bf24d5?w=1200&q=80)" }}>
+          <div className="hover-lift rounded-2xl h-80 bg-cover bg-center relative flex items-end p-8" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1625398407796-82650a8c9dd4?w=1200&q=80)" }}>
             <div className="absolute inset-0 rounded-2xl" style={{ background: "linear-gradient(180deg, transparent 40%, rgba(11,10,8,.75) 100%)" }} />
             <span className="absolute top-5 left-5 text-xs font-medium px-3 py-1.5 rounded-full bg-white text-black">${40} / person</span>
             <div className="relative text-white">
@@ -450,6 +433,52 @@ export default function App() {
         <p className="text-xs mt-6" style={{ color: "var(--grey)" }}>
           Prices are per-person estimates based on comparable guided tours — confirm final pricing over WhatsApp.
         </p>
+      </section>
+
+      {/* ================= AWARDS ================= */}
+      <section className="max-w-7xl mx-auto px-6 md:px-10 pt-24 md:pt-32">
+        <div className="rounded-2xl p-10 md:p-16 grid md:grid-cols-2 gap-10 items-center" style={{ background: "#EFE9DA" }}>
+          <div>
+            <p className="eyebrow">Recognition</p>
+            <h2 className="font-display text-3xl md:text-4xl mt-4 leading-tight">
+              We won the Best Travellers award.
+            </h2>
+            <p className="text-sm mt-4" style={{ color: "var(--grey)" }}>
+              Thank you, our amazing guests, for making us the proud winner of Airbnb Guest Favorite
+              and Booking.com's Best Travelers Review Award. We sincerely appreciate your support and
+              it was a pleasure to host each and every one of you.
+            </p>
+          </div>
+          <div className="flex items-center justify-center gap-6 flex-wrap">
+            <img src="/awards/airbnb-guest-favorite.png" alt="Airbnb Guest Favorite award" className="w-40 md:w-48" />
+            <img src="/awards/booking-award.png" alt="Booking.com Traveller Review Award 2025" className="w-40 md:w-48 rounded-xl" />
+          </div>
+        </div>
+      </section>
+
+      {/* ================= REVIEWS ================= */}
+      <section id="stories" className="scroll-target max-w-7xl mx-auto px-6 md:px-10 pt-24 md:pt-32">
+        <p className="eyebrow">From our guests</p>
+        <h2 className="font-display text-3xl md:text-5xl mt-4 leading-tight">
+          Reviews <span style={{ color: "var(--grey)" }}>from Airbnb</span>
+        </h2>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
+          {reviews.map((r) => (
+            <div key={r.name} className="hover-lift rounded-2xl p-6 bg-white" style={{ boxShadow: "0 1px 3px rgba(21,19,14,.08)" }}>
+              <div className="flex items-center justify-between">
+                <img src="/awards/airbnb-logo.png" alt="Airbnb" className="w-6 h-6" />
+                <div className="flex gap-0.5">
+                  {Array.from({ length: r.rating }).map((_, i) => (
+                    <Star key={i} size={13} fill="var(--ink)" style={{ color: "var(--ink)" }} />
+                  ))}
+                </div>
+              </div>
+              <p className="text-sm mt-4" style={{ color: "var(--ink)" }}>{r.text}</p>
+              <p className="text-xs mt-4 font-medium" style={{ color: "var(--grey)" }}>{r.name} · {r.country}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* ================= FAQ ================= */}
@@ -507,10 +536,6 @@ export default function App() {
             <div className="max-w-xs">
               <p className="font-display text-white text-2xl">Explore Barang With Us</p>
               <p className="text-xs mt-3 text-white/50">Step into the heart of a Nepali village with curated stays, hands-on farming, and homemade meals.</p>
-              <div className="flex items-center gap-4 mt-4">
-                <AirbnbBadge />
-                <BookingBadge />
-              </div>
             </div>
             <div className="flex gap-16 flex-wrap text-xs text-white/60">
               <div className="flex flex-col gap-3">
